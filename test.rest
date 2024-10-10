@@ -1,0 +1,38 @@
+@baseUrl = http://localhost:5000/api/v1
+
+### Get Portfolio
+GET {{baseUrl}}/
+
+### Get Stock Price
+GET {{baseUrl}}/stockprice?symbol=AAPL
+
+### Get Trade History
+GET {{baseUrl}}/gettradehistory
+
+### Buy Order
+POST {{baseUrl}}/buy
+Content-Type: application/json
+
+{
+    "symbol": "AAPL",
+    "quantity": 10
+}
+
+### Sell Order
+POST {{baseUrl}}/sell
+Content-Type: application/json
+
+{
+    "symbol": "AAPL",
+    "quantity": 5
+}
+
+### Set Stop-Loss Order
+POST {{baseUrl}}/stoploss
+Content-Type: application/json
+
+{
+    "symbol": "AAPL",
+    "quantity": 5,
+    "stopPrice": 150
+}
